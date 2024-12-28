@@ -29,7 +29,7 @@ class MiCard extends StatelessWidget {
       width: 300,
       margin: EdgeInsets.all(50),
       decoration: const BoxDecoration(color: Colors.lightBlueAccent, borderRadius: BorderRadius.all(Radius.circular(12))),
-      child: Column(
+      child: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text("Hi, I am Junjun", style: TextStyle(

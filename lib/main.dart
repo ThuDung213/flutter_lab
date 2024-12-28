@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'lab3.dart';
 import 'lab1.dart';
 import 'lab2.dart';
 
@@ -35,6 +36,11 @@ const _navBarItems = [
     activeIcon: Icon(Icons.looks_two_rounded),
     label: 'Lab 2',
   ),
+  BottomNavigationBarItem(
+    icon: Icon(Icons.looks_3_outlined),
+    activeIcon: Icon(Icons.looks_3_rounded),
+    label: 'Lab 3',
+  ),
 ];
 
 class _NavigationRailPageState extends State<NavigationRailPage> {
@@ -43,6 +49,7 @@ class _NavigationRailPageState extends State<NavigationRailPage> {
   final List<Widget> _pages = [
     const IAmRich(),
     const MiCard(),
+    const Dice(),
   ];
 
   @override
