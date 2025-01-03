@@ -74,8 +74,6 @@ class _NavigationRailPageState extends State<NavigationRailPage> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    final bool isSmallScreen = width < 600;
-    final bool isLargeScreen = width > 800;
 
     return Scaffold(
       body: Center(
