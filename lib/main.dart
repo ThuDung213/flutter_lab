@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'lab3.dart';
 import 'lab1.dart';
 import 'lab2.dart';
+import 'lab3.dart';
+import 'lab4.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,27 +31,45 @@ const _navBarItems = [
     icon: Icon(Icons.looks_one_outlined),
     activeIcon: Icon(Icons.looks_one_rounded),
     label: 'Lab 1',
+    backgroundColor: Colors.lightBlue,
   ),
   BottomNavigationBarItem(
     icon: Icon(Icons.looks_two_outlined),
     activeIcon: Icon(Icons.looks_two_rounded),
     label: 'Lab 2',
+    backgroundColor: Colors.green,
   ),
   BottomNavigationBarItem(
     icon: Icon(Icons.looks_3_outlined),
     activeIcon: Icon(Icons.looks_3_rounded),
     label: 'Lab 3',
+    backgroundColor: Colors.blueAccent,
+  ),
+  BottomNavigationBarItem(
+    icon: Icon(Icons.looks_4_outlined),
+    activeIcon: Icon(Icons.looks_4_rounded),
+    label: 'Lab 4',
+    backgroundColor: Colors.deepPurpleAccent,
   ),
 ];
+
+
 
 class _NavigationRailPageState extends State<NavigationRailPage> {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = [
-    const IAmRich(),
-    const MiCard(),
-    const Dice(),
+  static const List<Widget> _pages = [
+    IAmRich(),
+    MiCard(),
+    Dice(),
+    MagicBallPage(),
   ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -59,43 +78,15 @@ class _NavigationRailPageState extends State<NavigationRailPage> {
     final bool isLargeScreen = width > 800;
 
     return Scaffold(
-      bottomNavigationBar: isSmallScreen
-          ? BottomNavigationBar(
+      body: Center(
+        child: _pages.elementAt(_selectedIndex),
+      ),
+        bottomNavigationBar: BottomNavigationBar(
           items: _navBarItems,
           currentIndex: _selectedIndex,
-          onTap: (int index) {
-            setState(() {
-              _selectedIndex = index;
-            });
-          })
-          : null,
-      body: Row(
-        children: <Widget>[
-          if (!isSmallScreen)
-            NavigationRail(
-              selectedIndex: _selectedIndex,
-              onDestinationSelected: (int index) {
-                setState(() {
-                  _selectedIndex = index;
-                });
-              },
-              extended: isLargeScreen,
-              destinations: _navBarItems
-                  .map((item) => NavigationRailDestination(
-                  icon: item.icon,
-                  selectedIcon: item.activeIcon,
-                  label: Text(
-                    item.label!,
-                  )))
-                  .toList(),
-            ),
-          const VerticalDivider(thickness: 1, width: 1),
-          // This is the main content.
-          Expanded(
-            child: _pages[_selectedIndex],
-          )
-        ],
-      ),
-    );
+          selectedItemColor: Colors.black87,
+          onTap: _onItemTapped,
+        ),
+      );
   }
 }
