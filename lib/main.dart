@@ -73,8 +73,6 @@ class _NavigationRailPageState extends State<NavigationRailPage> {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-
     return Scaffold(
       body: Center(
         child: _pages.elementAt(_selectedIndex),
