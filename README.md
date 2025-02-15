@@ -1,16 +1,31 @@
-# micard
+### Flutter project
 
-A new Flutter project.
+### Installation
 
-## Getting Started
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/ThuDung213/flutter_lab.git
+   cd micard
+   ```
+2. Install dependencies:
+   ```sh
+   flutter pub get
+   ```
+3. Run the app:
+   ```sh
+   flutter run
+   ```
 
-This project is a starting point for a Flutter application.
+### Project Structure
 
-A few resources to get you started if this is your first Flutter project:
+# Lab 1: I Am Rich
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# Lab 3: Dice
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Lab 2: MiCard
+
+# Lab 4: Magic 8 Ball
+
+# Lab 5: Xylophone
+
+# Lab 6: Quiz App
